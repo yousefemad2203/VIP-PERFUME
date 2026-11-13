@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11100e">
+<title>VIP PERFUME | متجر العطور</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#10100f;--panel:#191816;--panel2:#211f1b;--gold:#d8b56b;--gold2:#f0d99e;--muted:#aaa49a;--line:#38332a;--white:#f8f5ef;--red:#d46b5c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#3c3020 0%,#151411 42%,#10100f 75%);color:var(--white);font-family:'Cairo',sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#11100fea;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+.top{max-width:1250px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}.mark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;font-size:19px;box-shadow:0 0 22px #d8b56b22}
+.brand h1{margin:0;font-size:20px;letter-spacing:2px;color:var(--gold2);line-height:1.2}.brand small{color:#bdb5a6;font-size:10px;letter-spacing:3px}
+.actions{display:flex;gap:9px}.btn{border:1px solid var(--line);background:var(--panel2);color:var(--white);padding:9px 14px;border-radius:10px;font-weight:700}.btn.gold{background:linear-gradient(135deg,#f0d99e,#c49a4d);color:#17130b;border:0}.btn:hover{filter:brightness(1.12)}
+.hero{max-width:1250px;margin:25px auto 20px;padding:32px 25px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #d8b56b40;border-radius:22px;background:linear-gradient(110deg,#2a2419,#171613 55%,#292117);overflow:hidden;position:relative}
+.hero:after{content:"VIP";position:absolute;left:8%;top:-45px;font-size:190px;font-weight:900;color:#d8b56b0b;letter-spacing:12px;pointer-events:none}
+.hero h2{font-size:clamp(25px,4vw,42px);margin:0 0 7px;color:var(--gold2)}.hero p{color:#c6bda9;margin:0;max-width:520px}.hero-tag{color:var(--gold);border:1px solid #d8b56b66;border-radius:30px;padding:9px 16px;white-space:nowrap;font-size:13px}
+main{max-width:1250px;margin:auto;padding:0 22px 50px}
+.category-wrap{display:flex;gap:9px;overflow:auto;padding:4px 0 15px;scrollbar-width:thin}
+.cat{white-space:nowrap;background:#1a1916;border:1px solid #38332a;color:#cfc7b8;padding:10px 18px;border-radius:30px;font-weight:800}.cat.active{background:linear-gradient(135deg,#efd99e,#c39a4e);color:#17130b;border-color:transparent}
+.toolbar{display:flex;align-items:center;gap:12px;margin:12px 0 20px;flex-wrap:wrap}.search{flex:1;min-width:200px;background:#1b1a17;border:1px solid var(--line);color:white;padding:12px 15px;border-radius:12px;outline:none}.search:focus{border-color:var(--gold)}.count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.product{background:linear-gradient(160deg,#211f1b,#171614);border:1px solid #393329;border-radius:17px;overflow:hidden;transition:.2s;position:relative}.product:hover{transform:translateY(-3px);border-color:#a8894d;box-shadow:0 12px 30px #0005}
+.photo{height:190px;background:radial-gradient(circle at 50% 60%,#6b532b33,transparent 55%),linear-gradient(135deg,#24211c,#171613);display:grid;place-items:center;position:relative;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:contain;padding:12px;position:absolute;inset:0}
+.bottle{width:75px;height:112px;position:relative;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 12px 9px #0008)}
+.bottle .cap{width:25px;height:18px;background:linear-gradient(90deg,#8b7446,#e2c27b,#927343);border-radius:4px 4px 1px 1px}
+.bottle .neck{width:20px;height:9px;background:#bda16a}
+.bottle .glass{width:70px;height:83px;border:2px solid #d7bd7c88;border-radius:12px 12px 15px 15px;background:linear-gradient(100deg,#ffffff35,#b28c4930 30%,#fff2 55%,#5d482b66);display:grid;place-items:center;box-shadow:inset 0 0 12px #fff3}
+.bottle .glass:after{content:"VIP";font-size:11px;font-weight:900;color:#ead39c;letter-spacing:2px;border-top:1px solid #d9bd7a66;border-bottom:1px solid #d9bd7a66;padding:3px}
+.product-info{padding:13px}.sku{font-size:10px;color:#a99b7c}.product h3{font-size:14px;line-height:1.7;min-height:48px;margin:4px 0 8px}.price{color:var(--gold2);font-weight:900;font-size:19px}.price small{font-size:11px;color:#bdb5a6;font-weight:500}
+.stock{font-size:11px;color:#83c69a}.stock.off{color:#e18c80}.buyrow{display:flex;gap:8px;margin-top:11px}.qty{width:66px;background:#111;color:white;border:1px solid var(--line);border-radius:9px;text-align:center}.add{flex:1;background:linear-gradient(135deg,#e8cf91,#bd9144);border:0;border-radius:9px;color:#1b160d;font-weight:900;padding:9px 6px}.add:disabled{opacity:.4;cursor:not-allowed}
+.empty{grid-column:1/-1;text-align:center;padding:45px 15px;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
+footer{text-align:center;border-top:1px solid #ffffff12;color:#817a6d;padding:24px;font-size:12px}
+.overlay{display:none;position:fixed;inset:0;background:#000a;z-index:40;justify-content:center;align-items:center;padding:16px}.overlay.show{display:flex}.modal{background:#1a1916;border:1px solid #8b7040;border-radius:18px;width:min(520px,100%);max-height:90vh;overflow:auto;padding:20px;box-shadow:0 25px 80px #0009}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.modal h2{font-size:20px;color:var(--gold2);margin:0}.close{background:none;border:0;color:white;font-size:25px}.cart-line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.cart-line small{display:block;color:var(--muted)}.cart-total{display:flex;justify-content:space-between;padding:15px 0;font-weight:900;color:var(--gold2);font-size:18px}
+.field{display:block;width:100%;margin:9px 0 12px;background:#111;color:white;border:1px solid var(--line);border-radius:9px;padding:11px;outline:none}.field:focus{border-color:var(--gold)}label{font-size:12px;color:#c8bda9}
+.admin-note{font-size:12px;color:#c9b88e;line-height:1.7;background:#292319;padding:10px;border-radius:9px}
+.admin-list{max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:10px}.admin-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px;border-bottom:1px solid var(--line);font-size:12px}.admin-item:last-child{border:0}
+.toggle{background:#293b2d;color:#9cdbac;border:1px solid #436a4b;border-radius:8px;padding:6px 9px}.toggle.off{background:#452724;color:#ffb1a7;border-color:#75433c}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.tiny{font-size:11px;padding:7px 9px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.top{padding:11px 14px}.brand h1{font-size:16px}.brand small{font-size:8px}.mark{width:37px;height:37px}.actions .btn{padding:8px 10px;font-size:12px}.hero{margin:15px 12px;padding:24px 18px;display:block}.hero-tag{display:inline-block;margin-top:14px}.hero:after{font-size:120px;top:5px}main{padding:0 12px 35px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{height:150px}.product-info{padding:10px}.product h3{font-size:12px;min-height:54px}.price{font-size:17px}.qty{width:53px}.add{font-size:11px}.cat{padding:8px 14px;font-size:12px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+ <div class="brand"><div class="mark">V</div><div><h1>VIP PERFUME</h1><small>YOUR SCENT. YOUR STYLE.</small></div></div>
+ <div class="actions"><button class="btn" onclick="openAdmin()">⚙ الإدارة</button><button class="btn gold" onclick="openCart()">🛒 السلة <span id="cartCount">0</span></button></div>
+</div></header>
+<section class="hero"><div><h2>عالمك.. برائحتك المميزة</h2><p>اكتشف تشكيلتنا من العطور واختر عطرك المفضل بسهولة، واطلبه مباشرة عبر واتساب.</p></div><div class="hero-tag">VIP PERFUME · عطور مميزة</div></section>
+<main>
+ <div class="category-wrap" id="categories"></div>
+ <div class="toolbar"><input id="search" class="search" placeholder="ابحث عن اسم البرفان أو رقم الصنف..." oninput="renderProducts()"><span class="count" id="resultCount"></span></div>
+ <div class="grid" id="products"></div>
+</main>
+<footer>© VIP PERFUME — جميع الحقوق محفوظة</footer>
+
+<div class="overlay" id="cartOverlay" onclick="outsideClose(event,'cartOverlay')"><div class="modal">
+ <div class="modal-head"><h2>سلة المشتريات</h2><button class="close" onclick="closeModal('cartOverlay')">×</button></div>
+ <div id="cartItems"></div><div class="cart-total"><span>الإجمالي</span><span id="cartTotal">0 ج.م</span></div>
+ <label>الاسم</label><input class="field" id="customerName" placeholder="اسم العميل">
+ <label>رقم الموبايل</label><input class="field" id="customerPhone" placeholder="رقم للتواصل">
+ <label>العنوان</label><input class="field" id="customerAddress" placeholder="عنوان التوصيل">
+ <button class="btn gold" style="width:100%;padding:13px" onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+</div></div>
+
+<div class="overlay" id="adminOverlay" onclick="outsideClose(event,'adminOverlay')"><div class="modal">
+ <div class="modal-head"><h2>لوحة إدارة VIP PERFUME</h2><button class="close" onclick="closeModal('adminOverlay')">×</button></div>
+ <div id="adminLogin"><p class="admin-note">أدخل كلمة مرور الإدارة لإدارة توافر المنتجات وأسعارها وصورها.</p><label>كلمة المرور</label><input class="field" id="adminPassword" type="password" placeholder="كلمة المرور"><button class="btn gold" onclick="loginAdmin()">دخول</button></div>
+ <div id="adminPanel" style="display:none">
+  <p class="admin-note">يمكنك إضافة أو تغيير أو حذف صورة أي برفان موجود من قائمة إدارة المنتجات. التعديلات تُحفظ على هذا المتصفح فقط؛ ولظهورها على أجهزة العملاء بعد النشر، يلزم ربط الموقع بتخزين صور وقاعدة بيانات على الاستضافة.</p>
+  <div class="admin-actions"><button class="btn tiny" onclick="exportProducts()">تصدير المنتجات</button><button class="btn tiny" onclick="document.getElementById('importFile').click()">استيراد نسخة</button><input id="importFile" type="file" accept="application/json" hidden onchange="importProducts(event)"></div>
+  <label style="display:block;margin-top:14px">اختر تصنيفاً لإضافة منتج</label><select class="field" id="newCategory"></select>
+  <label>اسم البرفان</label><input class="field" id="newName" placeholder="اسم البرفان">
+  <label>السعر بالجنيه</label><input class="field" id="newPrice" type="number" min="0" placeholder="السعر">
+  <label>رقم الصنف (اختياري)</label><input class="field" id="newSku" placeholder="رقم الصنف">
+  <label>رابط صورة البرفان (اختياري)</label><input class="field" id="newImage" placeholder="https://...">
+  <label>أو ارفع صورة البرفان من جهازك</label><input class="field" id="newImageFile" type="file" accept="image/*">
+  <small class="admin-note" style="display:block;margin:6px 0 12px">يمكنك وضع رابط أو اختيار صورة من الكمبيوتر/الموبايل. الصورة المرفوعة تُضغط تلقائياً لتقليل حجمها.</small>
+  <button class="btn gold" onclick="addProduct()">إضافة المنتج</button>
+  <label style="display:block;margin-top:16px">إدارة المنتجات</label><input class="field" id="adminSearch" placeholder="ابحث لإدارة منتج..." oninput="renderAdminList()">
+  <div class="admin-list" id="adminList"></div>
+ </div>
+</div></div>
+<script>
+const DEFAULT_PRODUCTS = [{"id": 1, "sku": "1462", "name": "مسمم", "price": 335.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 2, "sku": "838", "name": "الفيرن جورجينا بينك75 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 3, "sku": "1924", "name": "مسمم انتنس", "price": 345.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 4, "sku": "2611", "name": "فيرزاتشي دايلن بلو رجالي - 100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 5, "sku": "517", "name": "جان بول البيل احمر حريمي100 مل", "price": 298.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 6, "sku": "2377", "name": "هير كونفيشن - 100 مل", "price": 480.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 7, "sku": "1768", "name": "نيشان زيني اكسترا ريد100 مل", "price": 460.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 8, "sku": "1330", "name": "اكلير100 مل", "price": 375.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 9, "sku": "1777", "name": "نيشان ايجي ايجايو - 100 مل", "price": 450.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 10, "sku": "2576", "name": "اسكاندل حريمي100 مل غطاء معدن", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 11, "sku": "1364", "name": "بدي شوب فانليا - اوت لت - 50 مل", "price": 110.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 12, "sku": "2055", "name": "212 اكوا مان", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 13, "sku": "2375", "name": "هيز كونفيشن - 100 مل", "price": 480.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 14, "sku": "890", "name": "جان بول لكسير100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 15, "sku": "394", "name": "سوفاج مغناتيك100 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 16, "sku": "452", "name": "بربري هير100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 17, "sku": "2265", "name": "الفيرن جورجينا ابيض - 75 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 18, "sku": "895", "name": "قصه امبريال فالي( رمادي) 100 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 19, "sku": "793", "name": "عشق الشيوخ سلفر لطافه100 مل", "price": 260.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 20, "sku": "2082", "name": "كيالي فانيليا100 مل", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 21, "sku": "2266", "name": "الفيرن جورجينا نبيتي اوت لت", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 22, "sku": "1552", "name": "كيالي جوسي100 مل", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 23, "sku": "2403", "name": "وايلد كولت عساف - 100 مل", "price": 340.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 24, "sku": "888", "name": "جان بول التراميل100 مل", "price": 298.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 25, "sku": "1780", "name": "وايلد كولت عساف - 200 مل", "price": 565.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 26, "sku": "746", "name": "كريد افينوس100 مل", "price": 395.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 27, "sku": "893", "name": "جان بول التراميل تركواز جليتر100 مل", "price": 298.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 28, "sku": "1361", "name": "بكرات روج احمر70 مل", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 29, "sku": "2579", "name": "بلو شانيل100 مل غطاء مغناطيس -اوت لت ليت", "price": 285.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 30, "sku": "2634", "name": "سو سكسي100 مل", "price": 245.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 31, "sku": "913", "name": "يارا بينك لطافه100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 32, "sku": "885", "name": "سي اسود كريستال100 مل", "price": 270.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 33, "sku": "1856", "name": "ترياق انتنس100 مل", "price": 435.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 34, "sku": "1662", "name": "بيبي كات100 مل", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 35, "sku": "2693", "name": "هوس روج فور هير - 100مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 36, "sku": "2630", "name": "اكوا دي جيو بروفومو اسود100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 37, "sku": "2687", "name": "هرش محور100 مل", "price": 395.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 38, "sku": "2226", "name": "اكلير بستاشيو100 مل", "price": 375.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 39, "sku": "585", "name": "سو اسكاندل", "price": 320.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 40, "sku": "1365", "name": "بدي شوب فراوله - اوت لت - 50 مل", "price": 110.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 41, "sku": "2022", "name": "مانسيرا روز فانيليا100 ملي", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 42, "sku": "1264", "name": "يارا كاندي100 مل -اوت ليت", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 43, "sku": "1766", "name": "قصه اطلس(فضي) 100 مل", "price": 285.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 44, "sku": "2669", "name": "عساف - ميس جريس- 100 مل", "price": 340.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 45, "sku": "2615", "name": "دايموند ابراق القمر كرسنت - 75 مل", "price": 210.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 46, "sku": "2130", "name": "مانسيرا كوكو فانليا - 100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 47, "sku": "2613", "name": "دايموند ابراق القمر كرسنت - 100 مل", "price": 245.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 48, "sku": "2372", "name": "اميرة العرب امبريم100 مل", "price": 330.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 49, "sku": "2665", "name": "عساف - جريس ايريك- 100 مل", "price": 445.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 50, "sku": "2667", "name": "عساف - فرانكل بالك- 100 مل", "price": 345.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 51, "sku": "414", "name": "اولمبيا شفاف100 مل", "price": 235.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 52, "sku": "491", "name": "بالك اكس لكزس", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 53, "sku": "2024", "name": "بوم شيل بينك - 100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 54, "sku": "889", "name": "جان بول الميل البيرفيوم اسود100 مل", "price": 298.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 55, "sku": "453", "name": "استرونج ويز يو100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 56, "sku": "516", "name": "ديور هوم انتنس100 مل", "price": 331.25, "category": "OUT LET", "available": true, "image": ""}, {"id": 57, "sku": "1734", "name": "نيشان هاشيفات100 مل", "price": 395.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 58, "sku": "2326", "name": "بلو شانيل اكسلوسيف100 مل", "price": 340.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 59, "sku": "899", "name": "غال زايد جولد100 مل -اوت ليت", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 60, "sku": "1548", "name": "وايت رجينت دايموند100 مل", "price": 375.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 61, "sku": "2401", "name": "خمره واحه - 100 مل", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 62, "sku": "711", "name": "212 Black vip 100ml", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 63, "sku": "1434", "name": "نارسيسو احمر90 مل مربع", "price": 261.75, "category": "OUT LET", "available": true, "image": ""}, {"id": 64, "sku": "2605", "name": "عساف - جليتش - 200 مل", "price": 650.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 65, "sku": "886", "name": "سي فيوري كريستال100 مل", "price": 220.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 66, "sku": "1331", "name": "توكسيدو100 مل", "price": 330.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 67, "sku": "479", "name": "توم فورد توباكو فانليا", "price": 290.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 68, "sku": "2380", "name": "جمي شو - 100 مل", "price": 225.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 69, "sku": "2621", "name": "انا االبيض احمر100 مل", "price": 345.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 70, "sku": "1550", "name": "كيالي بستاشيو100 مل", "price": 345.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 71, "sku": "1078", "name": "اسد اسود لطافه50 مل", "price": 195.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 72, "sku": "529", "name": "ليبرا100 ملي", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 73, "sku": "2283", "name": "شهره - 90 مل", "price": 475.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 74, "sku": "1401", "name": "استرونج ويز يو ابسلوتلي100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 75, "sku": "1310", "name": "جنتل مان سوسايتي100 مل", "price": 336.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 76, "sku": "480", "name": "212 سكس حريمي100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 77, "sku": "1546", "name": "نود كورال دايموند100 مل", "price": 245.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 78, "sku": "390", "name": "سي احمر كريستال100 مل", "price": 270.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 79, "sku": "2415", "name": "ناين9 نايت - 100 مل", "price": 425.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 80, "sku": "748", "name": "عشق الشيوخ جولد لطافه100 مل", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 81, "sku": "2068", "name": "كولينن دايموند أريس100 مل", "price": 290.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 82, "sku": "1746", "name": "كوبان توباكو100 مل", "price": 475.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 83, "sku": "2286", "name": "شهره الكسير - 90 مل", "price": 475.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 84, "sku": "494", "name": "انفكتوس100 مل", "price": 290.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 85, "sku": "2428", "name": "نارسيسو رودريجز فور هير100 مل", "price": 0.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 86, "sku": "1666", "name": "قصه ال ليونا( عسلي) 100 مل", "price": 335.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 87, "sku": "1751", "name": "هرش لهب100 مل", "price": 850.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 88, "sku": "474", "name": "بوص سنت حريمي100 مل", "price": 245.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 89, "sku": "1925", "name": "اميرة العرب اصداف100 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 90, "sku": "541", "name": "ليبرا بالتنيوم", "price": 280.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 91, "sku": "2065", "name": "بلو دايموند أكوا100 مل", "price": 290.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 92, "sku": "2063", "name": "مارشميلو بلش100 مل", "price": 580.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 93, "sku": "2601", "name": "عساف - اورجت اتاكس - 200 مل -اوت ليت", "price": 575.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 94, "sku": "802", "name": "كريد سلفر100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 95, "sku": "1312", "name": "جود جيرل دايزنج جاردين100 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 96, "sku": "2228", "name": "اسكاندل رجالي شفاف100 مل", "price": 290.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 97, "sku": "1697", "name": "بربري بادي100 مل", "price": 265.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 98, "sku": "1474", "name": "ديور هوم شفاف100 مل", "price": 375.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 99, "sku": "1543", "name": "ايميرالد صول دايموند100 مل", "price": 395.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 100, "sku": "611", "name": "فيرزاتشي دايلن تركواز100 مل", "price": 276.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 101, "sku": "957", "name": "جان بول الميل اودو سيزما رجالي100 ملي", "price": 295.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 102, "sku": "744", "name": "فالنتينو رجالي اوم انتنس100 مل", "price": 310.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 103, "sku": "1754", "name": "ديمارلي ثائر100 مل", "price": 399.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 104, "sku": "538", "name": "توم فورد فانليا سكس100 مل", "price": 275.0, "category": "OUT LET", "available": true, "image": ""}, {"id": 105, "sku": "1218", "name": "اسد اسود لطافه100 مل", "price": 325.0, "category": "OUT LET", "available": true, "image": ""}];
+const categories = ["LB","STAR","HIGH COPY","FIRST","OUT LET","MASTER","SPLASH","SPRAY","Lotion"];
+const ADMIN_PASSWORD = "1234"; // غيّر كلمة المرور من هنا قبل نشر الموقع
+const WHATSAPP_NUMBER = "201147996966";
+let products = loadProducts(), activeCategory = "OUT LET", cart = {};
+function loadProducts(){try{const saved=localStorage.getItem("vip_perfume_products");return saved?JSON.parse(saved):DEFAULT_PRODUCTS.map(p=>({...p}))}catch(e){return DEFAULT_PRODUCTS.map(p=>({...p}))}}
+function saveProducts(){localStorage.setItem("vip_perfume_products",JSON.stringify(products))}
+function money(n){return Number(n).toLocaleString("en-US",{maximumFractionDigits:2})+" ج.م"}
+function safe(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderCategories(){
+ document.getElementById("categories").innerHTML=categories.map(c=>`<button class="cat ${c===activeCategory?'active':''}" onclick="selectCategory('${c}')">${c}</button>`).join("");
+ document.getElementById("newCategory").innerHTML=categories.map(c=>`<option>${c}</option>`).join("");
+}
+function selectCategory(c){activeCategory=c;renderCategories();renderProducts()}
+function bottle(){return `<div class="bottle"><div class="cap"></div><div class="neck"></div><div class="glass"></div></div>`}
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const list=products.filter(p=>p.category===activeCategory&&p.available!==false&&(p.name.toLowerCase().includes(q)||String(p.sku).includes(q)));
+ document.getElementById("resultCount").textContent=`${list.length} منتج`;
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`<article class="product">
+  <div class="photo">${p.image?`<img src="${safe(p.image)}" alt="${safe(p.name)}" onerror="this.remove()">`:bottle()}</div>
+  <div class="product-info"><span class="sku">كود الصنف: ${safe(p.sku||"—")}</span><h3>${safe(p.name)}</h3>
+  <div class="price">${p.price>0?money(p.price):'السعر غير محدد'}</div><div class="stock">متاح للطلب · ${safe(p.category)}</div>
+  <div class="buyrow"><input class="qty" id="qty-${p.id}" type="number" min="1" max="99" value="1" aria-label="الكمية"><button class="add" ${p.price<=0?'disabled':''} onclick="addToCart(${p.id})">أضف للسلة</button></div></div></article>`).join(""):`<div class="empty">لا توجد منتجات متاحة في هذا التصنيف حالياً.</div>`;
+}
+function addToCart(id){const p=products.find(x=>x.id===id);const q=Math.max(1,Math.min(99,parseInt(document.getElementById("qty-"+id).value)||1));cart[id]=(cart[id]||0)+q;updateCartCount();toast("تمت إضافة المنتج إلى السلة")}
+function updateCartCount(){document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function openCart(){renderCart();document.getElementById("cartOverlay").classList.add("show")}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0).map(([id,q])=>({p:products.find(p=>p.id===Number(id)),q})).filter(x=>x.p);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(({p,q})=>`<div class="cart-line"><div><b>${safe(p.name)}</b><small>${q} × ${money(p.price)}</small><button class="btn tiny" onclick="changeCart(${p.id},-1)">−</button> <button class="btn tiny" onclick="changeCart(${p.id},1)">+</button> <button class="btn tiny" onclick="removeCart(${p.id})">حذف</button></div><b>${money(p.price*q)}</b></div>`).join(""):'<div class="empty">السلة فارغة، اختار البرفانات اللي محتاجها.</div>';
+ const total=entries.reduce((s,x)=>s+x.p.price*x.q,0);document.getElementById("cartTotal").textContent=money(total);
+}
+function changeCart(id,d){cart[id]=Math.max(0,(cart[id]||0)+d);if(!cart[id])delete cart[id];updateCartCount();renderCart()}
+function removeCart(id){delete cart[id];updateCartCount();renderCart()}
+function sendOrder(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0).map(([id,q])=>({p:products.find(p=>p.id===Number(id)),q})).filter(x=>x.p);
+ if(!entries.length){alert("السلة فارغة");return}
+ const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim();
+ if(!name||!phone||!address){alert("من فضلك اكتب الاسم ورقم الموبايل والعنوان");return}
+ const total=entries.reduce((s,x)=>s+x.p.price*x.q,0);
+ let msg=`طلب جديد من VIP PERFUME%0Aالاسم: ${encodeURIComponent(name)}%0Aالموبايل: ${encodeURIComponent(phone)}%0Aالعنوان: ${encodeURIComponent(address)}%0A%0Aالمنتجات:%0A`;
+ entries.forEach(({p,q})=>{msg+=`- ${encodeURIComponent(p.name)} | التصنيف: ${encodeURIComponent(p.category)} | الكمية: ${q} | السعر: ${encodeURIComponent(money(p.price))}%0A`});
+ msg+=`%0Aالإجمالي: ${encodeURIComponent(money(total))}`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+}
+function openAdmin(){document.getElementById("adminOverlay").classList.add("show")}
+function loginAdmin(){if(document.getElementById("adminPassword").value===ADMIN_PASSWORD){document.getElementById("adminLogin").style.display="none";document.getElementById("adminPanel").style.display="block";renderCategories();renderAdminList()}else alert("كلمة المرور غير صحيحة")}
+function renderAdminList(){
+ const q=(document.getElementById("adminSearch").value||"").toLowerCase();
+ const list=products.filter(p=>p.name.toLowerCase().includes(q)||String(p.sku).includes(q)).slice(0,150);
+ document.getElementById("adminList").innerHTML=list.map(p=>`<div class="admin-item">
+   <span>${safe(p.name)}<br><small>${safe(p.category)} · ${money(p.price)} · ${p.image?'لها صورة':'بدون صورة'}</small></span>
+   <div class="admin-actions">
+    <button class="toggle ${p.available===false?'off':''}" onclick="toggleProduct(${p.id})">${p.available===false?'غير متاح':'متاح'}</button>
+    <button class="btn tiny" onclick="editProduct(${p.id})">تعديل</button>
+    <button class="btn tiny" onclick="document.getElementById('image-${p.id}').click()">${p.image?'تغيير الصورة':'إضافة صورة'}</button>
+    ${p.image?`<button class="btn tiny" onclick="removeProductImage(${p.id})">حذف الصورة</button>`:''}
+    <input id="image-${p.id}" type="file" accept="image/*" hidden onchange="changeProductImage(${p.id},this)">
+   </div>
+  </div>`).join("");
+}
+function toggleProduct(id){const p=products.find(x=>x.id===id);p.available=p.available===false?true:false;saveProducts();renderAdminList();renderProducts()}
+async function changeProductImage(id,input){
+ const p=products.find(x=>x.id===id),file=input.files&&input.files[0];
+ if(!p||!file)return;
+ try{
+  p.image=await imageFileToDataURL(file);
+  saveProducts();
+  renderAdminList();
+  renderProducts();
+  alert("تم تحديث صورة البرفان بنجاح");
+ }catch(e){
+  alert(e.message||"تعذر تحديث الصورة");
+  input.value="";
+ }
+}
+function removeProductImage(id){
+ const p=products.find(x=>x.id===id);
+ if(!p||!p.image)return;
+ if(!confirm("هل تريد حذف صورة هذا البرفان؟"))return;
+ p.image="";
+ saveProducts();
+ renderAdminList();
+ renderProducts();
+}
+function editProduct(id){
+ const p=products.find(x=>x.id===id);if(!p)return;
+ const name=prompt("اسم البرفان",p.name);if(name===null)return;
+ const price=prompt("السعر بالجنيه",p.price);if(price===null)return;
+ const category=prompt("التصنيف: "+categories.join(" / "),p.category);if(category===null)return;
+ const currentIsUpload=(p.image||"").startsWith("data:");
+ const image=prompt("رابط صورة البرفان الجديد (اتركه فارغاً للاحتفاظ بالصورة الحالية، أو اكتب رابطاً جديداً)",currentIsUpload?"":(p.image||""));if(image===null)return;
+ p.name=name.trim()||p.name;p.price=Math.max(0,Number(price)||0);p.category=categories.includes(category.trim())?category.trim():p.category;if(image.trim())p.image=image.trim();
+ saveProducts();renderAdminList();renderProducts();
+ const picker=document.createElement("input");picker.type="file";picker.accept="image/*";
+ picker.onchange=async()=>{if(!picker.files||!picker.files[0])return;try{p.image=await imageFileToDataURL(picker.files[0]);saveProducts();renderAdminList();renderProducts();alert("تم تحديث صورة المنتج") }catch(e){alert(e.message||"تعذر تحميل الصورة")}};
+ if(confirm("هل تريد أيضاً اختيار صورة من جهازك؟ اضغط موافق لاختيار الصورة أو إلغاء للاحتفاظ بالرابط/الصورة الحالية."))picker.click();
+}
+async function imageFileToDataURL(file){
+ if(!file.type.startsWith("image/"))throw new Error("من فضلك اختر ملف صورة صالحاً");
+ if(file.size>15*1024*1024)throw new Error("حجم الصورة كبير جداً. اختر صورة أقل من 15 ميجابايت.");
+ const source=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(new Error("تعذرت قراءة الصورة"));r.readAsDataURL(file)});
+ const img=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error("ملف الصورة غير صالح"));im.src=source});
+ const scale=Math.min(1,1000/Math.max(img.width,img.height));const canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
+ canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);
+ return canvas.toDataURL("image/webp",0.82);
+}
+async function addProduct(){
+ const name=document.getElementById("newName").value.trim(),price=Number(document.getElementById("newPrice").value);
+ if(!name||!Number.isFinite(price)||price<0){alert("اكتب اسم المنتج وسعراً صحيحاً");return}
+ const id=Math.max(0,...products.map(p=>Number(p.id)||0))+1;
+ const file=document.getElementById("newImageFile").files[0];
+ const product={id,sku:document.getElementById("newSku").value.trim(),name,price,category:document.getElementById("newCategory").value,available:true,image:document.getElementById("newImage").value.trim()};
+ if(file){try{product.image=await imageFileToDataURL(file)}catch(e){alert(e.message||"تعذر تحميل الصورة");return}}
+ products.unshift(product);
+ try{saveProducts()}catch(e){products.shift();alert("مساحة حفظ الصور في المتصفح غير كافية. جرّب صورة أصغر أو استخدم رابط صورة.");return}
+ ["newName","newPrice","newSku","newImage"].forEach(x=>document.getElementById(x).value="");document.getElementById("newImageFile").value="";renderAdminList();renderProducts();alert("تمت إضافة المنتج")
+}
+function exportProducts(){const blob=new Blob([JSON.stringify(products,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="vip-perfume-products.json";a.click();URL.revokeObjectURL(a.href)}
+function importProducts(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const v=JSON.parse(r.result);if(!Array.isArray(v))throw 0;products=v;saveProducts();renderAdminList();renderProducts();alert("تم استيراد المنتجات")}catch(err){alert("ملف غير صالح")}};r.readAsText(f)}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+function outsideClose(e,id){if(e.target.id===id)closeModal(id)}
+function toast(s){const t=document.createElement("div");t.textContent=s;t.style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#e6cc91;color:#17130b;padding:11px 20px;border-radius:10px;z-index:60;font-weight:800";document.body.appendChild(t);setTimeout(()=>t.remove(),1800)}
+renderCategories();renderProducts();updateCartCount();
+</script>
+</body></html>
